@@ -32,17 +32,7 @@ for( $i = 1; $i < count($titulos) ; $i++ )
     $retorno->subTituloA = limpaTexto($subTitulo[2]);
     $retorno->subTituloB = limpaTexto($subTitulo[3]);
     $retorno->texto = limpaTexto($corpo);
-
     $lista[] = $retorno;
-
-    /*
-    echo("Item $i Titulo:( $titulo[0] )");
-    echo("Subtitulo a: ( $subTitulo[2] )");
-
-    echo("Subtitulo b: ( $subTitulo[3] )");
-
-    echo("Texto ( $corpo )");
-    */
     }
     echo json_encode($lista);
 
@@ -70,18 +60,15 @@ function limpaTexto( $texto )
    $texto = str_replace( "<pan class='tabulacao'>", " ", $texto );
    $texto = str_replace( "<div id=\"171\" style=\"display: none;\">", " ", $texto );
    $texto = str_replace( "<span CLASS='tabulacao negrito'>", " ", $texto );
-
    $texto = str_replace( "<span class='refrao_salmo'>", " ", $texto );
    $texto = str_replace( "<span class=' tab_num'>", " ", $texto );
    $texto = str_replace( "<span class=' tab_num '>", " ", $texto );
    $texto = str_replace( '<div id="3098" style="display: none;">', " ", $texto );
    $texto = str_replace( "<div id=\"3\" style=\"display: none;\">", " ", $texto );
    $texto = str_replace( '<span class="negrito tabulacao">', " ", $texto );
-
    $texto = str_replace( '"<div class="refrao_salmo">"', " ", $texto );
    $texto = str_replace( "<div id='3098' style='display: none;'>", " ", $texto );
    $texto = str_replace( "<span class='negrito tabulacao'>", " ", $texto );
-
    $texto = str_replace( '<span class="tabulacao">', " ", $texto );
    $texto = str_replace( "<span class='tabulacao'>", " ", $texto );
    $texto = str_replace( '<span class="tabulacao negrito">', " ", $texto );
@@ -112,8 +99,6 @@ function limpaTexto( $texto )
    $texto = str_replace( "<div class='cit_direita_italico'>", " ", $texto );
    $texto = str_replace( "<div class='cit_direita'>", " ", $texto );
    $texto = str_replace( '<div class="cit_direita">', " ", $texto );
-   
-
    $texto = str_replace( '&nbsp;', "", $texto );
    $texto = str_replace( '&eth;', "õ", $texto );
    $texto = str_replace( '&Eth;', "Õ", $texto );
@@ -152,11 +137,6 @@ function limpaTexto( $texto )
    $texto = str_replace( "&ecirc;", "ê", $texto );
    $texto = str_replace( "&uacute;", "ú", $texto );
    $texto = str_replace( "&Uacute;", "Ú", $texto );
-   
-
-  
-
-
    return $texto;
    }
   
